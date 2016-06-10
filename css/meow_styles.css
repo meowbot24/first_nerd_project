@@ -1,0 +1,88 @@
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+.container {
+	margin-top: 20px;
+}
+
+#dot {
+	width: 32px;
+	height: 32px;
+	background-color: #D4F8FF;
+	border-radius: 50%;
+	float: left;
+	display: inline-block;
+	margin: 20px 15px 0px 3px;
+}
+
+#boop {
+	height: 20px;
+	float: left;
+
+}
+
+#booptext {
+	display: none;
+	float: left;
+}
+
+#timeline-title {
+	float: left;
+	display: inline-block;
+}
+
+.title {
+	margin-top: 5px;
+	clear: both;
+}
+
+.clear {
+	clear: both;
+}
+
+.line {
+	height: 1px;
+	width: auto;
+	background-color: #efefef;
+}
+
+.form-formats {
+	padding-top: 10px;
+}
+
+.form-group {
+	padding-bottom: -5px;
+}
+
+.asana-output {
+
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.header-line {
+	height: 2px;
+	width: auto;
+	background-color: black;
+}
+
+.dotted-line {
+	height: 1px;
+	width: auto;
+	background-color: black;
+}
+
+.em-green {
+	color: #95D332;
+}
+
+.em-blue {
+	color: #00A0C7;
+}
+
+.timeline-text {
+	font-size: 12px;
+}

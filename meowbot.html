@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html ng-app="timelineApp">
+<head>
+	<title>Meowbot Beep Boop</title>
+	<link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/meow_styles.css">
+</head>
+<body ng-controller="timelineController">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="boop">
+					<h5 id="booptext">Boop!</h5>
+				</div>
+
+				<div class="title">
+					<div id="dot"></div>
+					<h1 id="timeline-title">Makin' dem timelines.</h1>
+				</div>
+			</div>
+		</div>
+
+		<!-- Template -->
+<!-- 				<div class="form-group">
+						<label class="control-label col-md-5" for=""></label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="">
+						</div>
+					</div> 				  -->
+
+		<!-- Client Information Form -->
+
+		<div class="row clear">
+			<div class="col-md-6">
+				<h4>Client Information</h4>
+				<div class="line"></div>
+
+				<form class="form-horizontal form-formats" role="form">
+
+					<!-- Company Name -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="companyName">Company Name:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="companyName" ng-model="companyName">
+						</div>
+					</div>
+
+					<!-- Client Name  -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="clientName" >Name:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="clientName" ng-model="clientName">
+						</div>
+					</div>
+
+					<!-- Client Email -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="clientEmail">Email Address:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="clientEmail" ng-model="clientEmail">
+						</div>
+					</div>
+
+					<!-- Client Phone Number -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="clientPhone">Phone Number:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="clientPhone" ng-model="clientPhone">
+						</div>
+					</div>
+
+					<!-- Client Location/Timezone -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="clientLoc">Location and Timezone:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="clientLoc" ng-model="clientLoc">
+						</div>
+					</div>
+
+
+					<!-- TO DO: ability to add more than 1 contact -->
+
+
+				</form>
+
+			</div>
+		<!-- </div> -->
+
+		<!-- Account Information Form -->
+		<!-- <div class="row"> -->
+			<div class="col-md-6">
+				<h4>Account Information</h4>
+				<div class="line"></div>
+
+				<form class="form-horizontal form-formats">
+
+					<!-- SF Opp Link -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="accountLink">SalesForce Opp Link:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="accountLink" ng-model="accountLink">
+						</div>
+					</div> 
+
+					<!-- Account Manager -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="accountMgr">Account Manager:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="accountMgr" ng-model="accountMgr">
+						</div>
+					</div>
+
+					<!-- Package Details -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="accountPkg">Package Details:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="accountPkg" ng-model="accountPkg">
+						</div>
+					</div> 	 		
+
+					<!-- SF Notes  -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="accountSFNotes">SalesForce Notes:</label>
+						<div class="col-md-7">
+							<textarea class="form-control" id="accountSFNotes" ng-model="accountSFNotes"></textarea>
+						</div>
+					</div> 	
+				</form>	
+
+			</div> <!-- account div end -->
+		</div> <!-- row end -->
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<h4>Event Information</h4>
+				<div class="line"></div>
+
+				<!-- Event Information Form -->
+				<form class="form-horizontal form-formats">
+
+					<!-- Event Name -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="eventName">Event Name:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="eventName" ng-model="eventName">
+						</div>
+					</div>
+
+					<!-- Event Dates -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="eventDates">Event Dates:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="eventDates" ng-model="eventDates">
+						</div>
+					</div>
+
+					<!-- Event Location -->
+					<div class="form-group">
+						<label class="control-label col-md-5" for="eventLoc">Event Location and Timezone:</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="eventLoc" ng-model="eventLoc">
+						</div>
+					</div>
+				</form>
+
+			</div> <!-- col-md-6 end -->
+
+		</div> <!-- row end -->
+
+		<!-- Asana Output -->
+
+		<div class="row">
+			<div class="col-md-6">
+				<h4>Copy and Paste to Asana</h4>
+				<div class="line"></div>
+
+				<div class="asana-output">
+
+					<p>COMPANY NAME: {{companyName}} <br/>
+					CONTACT: {{clientName}} | {{clientPhone}} | {{clientEmail}}<br/>
+					CLIENT LOCATION/TIMEZONE: {{clientLoc}} <br/><br/>
+
+					SHORTCODE: {{placeholder}} <br/>
+					CUSTOM DOMAIN: {{placeholder}} <br>
+					PASSCODE: {{placeholder}} <br>
+					LOGIN: {{placeholder}} <br>
+
+					<br>
+
+					EVENT NAME: {{eventName}} <br>
+					EVENT LOCATION/TIMEZONE: {{eventLoc}} <br>
+					EVENT DATES: {{eventDates}} <br>
+					ONSITE (Y/N): {{placeholder}} <br>
+					APP LAUNCH DATE: {{launchDate}} <br>
+
+					<br>
+
+					ACCOUNT MANAGER: {{accountMgr}} <br>
+					SALESFORCE OPP LINK: {{accountLink}} <br>
+					PACKAGE DETAILS: {{accountPkg}} <br>
+
+					<br>
+
+					EVENT/APP DETAILS: {{placeholder}} <br>
+
+					<br>
+
+					AM/SF NOTES: {{accountSFNotes}} <br>
+
+
+				</div>
+
+
+		</div>
+
+		<!-- End of Asana Output -->
+
+
+		<!-- Project Timeline  -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- header -->
+
+					<div class="header-line"></div>
+					<h2><span class="uppercase">Detailed Project Timeline</span> | <span class="em-green">Event</span><span class="em-blue">Mobi</span> App for {{companyName}}</h2>
+
+					<div class="header-line"></div> 
+
+				</div>	
+
+					<!-- event info -->
+
+				<div class="col-md-6">	
+					<span class="timeline-text">{{eventName}}</span>
+
+					<br>
+
+					<div class="dotted-line"></div>
+
+					<p>EVENT DATES: {{eventDates}} <br>
+					APP LAUNCH DATE: {{launchDate}}</p>
+
+
+				</div>
+
+
+
+			</div>
+
+		</div>			
+
+
+	</div><!-- div container end -->	
+
+
+	<!-- extra footer space -->
+	<br><br><br><br>
+
+
+	<script type="text/javascript" src="js/jquery-2.2.0.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/sexy_js.js"></script>
+	<script type="text/javascript" src="js/dat_app.js"></script>
+</body>
+</html>
